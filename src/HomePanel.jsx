@@ -1,9 +1,24 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
-const items = ['Pizza', 'Burger', 'Soup', 'Drinks', 'Bakery']
+const items = [
+	{ name: 'Pizza', path: '/pizza' },
+	{ name: 'Burgers', path: '/burgers' },
+	{ name: 'Soups', path: '/soup' },
+	{ name: 'Beers', path: '/beers' },
+	{ name: 'Bakery', path: '/bakery' },
+]
 
-const Button = ({ children }) => {
-	return <button className='card'>{children}</button>
+const Button = ({ children, path }) => {
+	let history = useHistory()
+	function press() {
+		history.push(path)
+	}
+	return (
+		<button className='card' onClick={press}>
+			{children}
+		</button>
+	)
 }
 
 export default () => {
@@ -12,7 +27,7 @@ export default () => {
 			{items.map((i, id) => {
 				return (
 					<div className='cell' key={id}>
-						<Button>{i}</Button>
+						<Button path={i.path}>{i.name}</Button>
 					</div>
 				)
 			})}
