@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
-export default ({ children, item }) => {
+export default ({ children, item, className }) => {
 	let history = useHistory()
 
 	function press() {
@@ -9,8 +9,10 @@ export default ({ children, item }) => {
 		history.push(location)
 	}
 
+	console.log(className)
+
 	return (
-		<button className='card' onClick={press}>
+		<button className={className || 'card'} onClick={press}>
 			{children}
 		</button>
 	)

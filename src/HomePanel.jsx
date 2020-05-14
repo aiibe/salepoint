@@ -14,8 +14,13 @@ const items = [
 export default () => {
 	return (
 		<Panel>
-			<div className='header with-navigation'></div>
+			<div className='header with-navigation'>
+				<h1>Menu</h1>
+			</div>
 			<div className='grid'>
+				<div className='cell'>
+					<Button className='card add'>+ New category</Button>
+				</div>
 				{items.map((i, id) => {
 					return (
 						<div className='cell' key={id}>

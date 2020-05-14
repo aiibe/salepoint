@@ -85,7 +85,7 @@ h1 {
 		}
 
 		h1 {
-			font-size: 2.5rem;
+			font-size: 2rem;
 			margin: 0;
 		}
 	}
@@ -104,17 +104,23 @@ h1 {
 
 			.card {
 				font-size: 1.4rem;
+				line-height: 1;
 				width: 100%;
 				height: 100%;
 				background: $element;
 				border-radius: 1rem;
-				padding: 5%;
+				padding: 5% 15%;
 				color: rgba(255, 255, 255, 0.65);
+				white-space: normal;
 
 				&:active {
 					transform: scale(0.99);
 					opacity: 0.8;
 				}
+			}
+
+			.add {
+				background: $button;
 			}
 		}
 	}
