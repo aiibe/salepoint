@@ -9,11 +9,14 @@ const items = [
 	{ name: 'Bakery', path: '/bakery' },
 ]
 
-const Button = ({ children, path }) => {
+const Button = ({ children, item }) => {
 	let history = useHistory()
+
 	function press() {
-		history.push(path)
+		const location = { pathname: item.path, state: { ...item } }
+		history.push(location)
 	}
+
 	return (
 		<button className='card' onClick={press}>
 			{children}
@@ -27,7 +30,7 @@ export default () => {
 			{items.map((i, id) => {
 				return (
 					<div className='cell' key={id}>
-						<Button path={i.path}>{i.name}</Button>
+						<Button item={i}>{i.name}</Button>
 					</div>
 				)
 			})}

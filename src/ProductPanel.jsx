@@ -1,5 +1,13 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 export default () => {
-	return <h1>Hello Page</h1>
+	let location = useLocation()
+	let { name } = location.state
+
+	return (
+		<div>
+			<h1>Page {name}</h1>
+		</div>
+	)
 }
