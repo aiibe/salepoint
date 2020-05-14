@@ -1,0 +1,20 @@
+{
+	"name": "Salepoint",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "parcel src/index.html -d tmp/"
+	},
+	"dependencies": {
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"devDependencies": {
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"node-sass": "^4.14.1",
+		"parcel-bundler": "^1.12.4"
+	}
+}

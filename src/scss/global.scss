@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap');
+
+// Variables
+$font-color: #fff;
+$fonts: 'Poppins', Arial, Helvetica, sans-serif;
+$background: #1f1c31;
+$element: linear-gradient(
+	90deg,
+	rgba(255, 255, 255, 0.08) 0%,
+	rgba(255, 255, 255, 0.05) 100%
+);
+
+@import './base.scss';
+
+html,
+body,
+#sp-app {
+	height: 100%;
+}
+
+html {
+	background-color: $background;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.app {
+	display: flex;
+	max-width: 1024px;
+	height: 100%;
+	margin: auto;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem;
+
+		.brand {
+			img {
+				width: 10rem;
+			}
+		}
+	}
+
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 1rem;
+		font-weight: 600;
+
+		.cell {
+			display: flex;
+			width: 25%;
+			height: 18rem;
+			padding: 1rem;
+
+			.card {
+				cursor: pointer;
+				flex-grow: 1;
+				background: $element;
+				border-radius: 1rem;
+				padding: 5%;
+			}
+		}
+	}
+}
+
+.bill {
+	background: $element;
+	width: 30%;
+	padding: 1rem;
+
+	h1 {
+		font-size: 2.8rem;
+	}
+}
