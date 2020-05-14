@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import Button from './elements/Button'
 
 const items = [
 	{ name: 'Pizza', path: '/pizza' },
@@ -8,21 +8,6 @@ const items = [
 	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
 ]
-
-const Button = ({ children, item }) => {
-	let history = useHistory()
-
-	function press() {
-		const location = { pathname: item.path, state: { ...item } }
-		history.push(location)
-	}
-
-	return (
-		<button className='card' onClick={press}>
-			{children}
-		</button>
-	)
-}
 
 export default () => {
 	return (

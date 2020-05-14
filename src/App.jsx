@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ProductPanel from './ProductPanel'
 
 export default () => {
+	console.log('Render App')
 	return (
 		<BrowserRouter>
 			<div className='app'>

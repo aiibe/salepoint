@@ -6,8 +6,9 @@ export default () => {
 	let { name } = location.state
 
 	return (
-		<div>
+		<div className='grid'>
 			<h1>Page {name}</h1>
+			<div className='cell'></div>
 		</div>
 	)
 }
