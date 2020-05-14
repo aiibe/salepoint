@@ -3,7 +3,7 @@ import React from 'react'
 const items = ['Pizza', 'Burger', 'Soup', 'Drinks', 'Bakery']
 
 const Button = ({ children }) => {
-	return <div className='card'>{children}</div>
+	return <button className='card'>{children}</button>
 }
 
 export default () => {
