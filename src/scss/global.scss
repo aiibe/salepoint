@@ -24,6 +24,12 @@ h1 {
 	line-height: 1;
 }
 
+input[type='text'] {
+	background-color: white;
+	font-family: $fonts;
+	border: 0;
+}
+
 .app {
 	display: flex;
 	max-width: 1024px;
@@ -145,6 +151,7 @@ h1 {
 	height: 100%;
 
 	.modal-overlay {
+		cursor: pointer;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -159,11 +166,32 @@ h1 {
 		position: relative;
 		margin: 4rem auto;
 		max-width: 70%;
-		background-color: $background;
+		background: $element;
 		border-radius: 1rem;
+		overflow: hidden;
 	}
 }
 
 .form {
-	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+
+	.body {
+		padding: 1.5rem;
+	}
+
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -1px;
+
+		button {
+			height: 5rem;
+			width: 50%;
+			border-radius: 0;
+			color: white;
+			background: rgba(0, 0, 0, 0.2);
+			margin: 0 1px;
+		}
+	}
 }

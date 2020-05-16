@@ -13,7 +13,7 @@ const items = [
 
 export default () => {
 	const [modal, setModal] = useState(false)
-
+	console.log('HomePanel render')
 	return (
 		<Panel>
 			<div className='header with-navigation'>
@@ -36,9 +36,11 @@ export default () => {
 			{modal && (
 				<Modal close={() => setModal(false)}>
 					<div className='form'>
-						<label>New collection</label>
-						<input type='text' placeholder='Name' />
-						<div>
+						<div className='body'>
+							<label>New collection</label>
+							<input type='text' placeholder='Name' autoFocus />
+						</div>
+						<div className='footer'>
 							<Button>Cancel</Button>
 							<Button>Okay</Button>
 						</div>
