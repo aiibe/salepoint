@@ -9,8 +9,6 @@ export default ({ children, item, className }) => {
 		history.push(location)
 	}
 
-	console.log(className)
-
 	return (
 		<button className={className || 'card'} onClick={press}>
 			{children}

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './elements/Button'
 import Panel from './elements/Panel'
-import ButtonIcon from './elements/ButtonIcon'
+import Modal from './elements/Modal'
 
 const items = [
 	{ name: 'Pizza', path: '/pizza' },
@@ -12,6 +12,8 @@ const items = [
 ]
 
 export default () => {
+	const [modal, setModal] = useState(false)
+
 	return (
 		<Panel>
 			<div className='header with-navigation'>
@@ -19,7 +21,9 @@ export default () => {
 			</div>
 			<div className='grid'>
 				<div className='cell'>
-					<Button className='card add'>+ New category</Button>
+					<button className='card add' onClick={() => setModal(true)}>
+						+ New collection
+					</button>
 				</div>
 				{items.map((i, id) => {
 					return (
@@ -29,6 +33,18 @@ export default () => {
 					)
 				})}
 			</div>
+			{modal && (
+				<Modal close={() => setModal(false)}>
+					<div className='form'>
+						<label>New collection</label>
+						<input type='text' placeholder='Name' />
+						<div>
+							<Button>Cancel</Button>
+							<Button>Okay</Button>
+						</div>
+					</div>
+				</Modal>
+			)}
 		</Panel>
 	)
 }
