@@ -16,9 +16,6 @@ export default () => {
 	console.log('HomePanel render')
 	return (
 		<Panel>
-			<div className='header with-navigation'>
-				<h1>Menu</h1>
-			</div>
 			<div className='grid'>
 				<div className='cell'>
 					<button className='card add' onClick={() => setModal(true)}>

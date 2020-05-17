@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import Navigato from './Navigato'
 import Bill from './Bill'
 import HomePanel from './HomePanel'
 
@@ -12,7 +12,7 @@ export default () => {
 		<BrowserRouter>
 			<div className='app'>
 				<div className='content'>
-					<Header />
+					<Navigato />
 					<Switch>
 						<Route path='/:id'>
 							<ProductPanel />
@@ -23,6 +23,7 @@ export default () => {
 					</Switch>
 					<div className='footer'></div>
 				</div>
+
 				<Bill />
 			</div>
 		</BrowserRouter>

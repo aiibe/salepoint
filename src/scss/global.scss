@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap');
 
 // Variables
-$font-color: #fff;
 $fonts: 'Poppins', Arial, Helvetica, sans-serif;
-$background: #1b1f2c;
-$button: linear-gradient(90deg, #28304f 0%, #252a3c 100%);
-$shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+$font-color: rgba(0, 0, 0, 0.6);
+$background: #e1e1e1;
+$button: linear-gradient(180deg, #fff 0%, #ececec 100%);
+$shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+$radius: 0.5rem;
 
 @import './base.scss';
 
@@ -30,106 +31,99 @@ input[type='text'] {
 	border: 0;
 }
 
+button {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	background: $button;
+	box-shadow: $shadow;
+	border-radius: $radius;
+	font-family: $fonts;
+	padding: 0 1.5rem;
+
+	&.with-icon {
+		justify-content: space-between;
+		min-width: 10rem;
+	}
+
+	&:active {
+		transform: scale(0.99);
+		opacity: 0.8;
+	}
+}
+
+svg {
+	height: 2rem;
+	fill: $font-color;
+}
+
 .app {
 	display: flex;
 	max-width: 1024px;
 	height: 100%;
 	margin: auto;
+	padding: 1.5rem;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 48px;
+	margin: 0 1rem 1rem 1rem;
+
+	.item {
+		display: flex;
+		align-items: center;
+		height: inherit;
+	}
+
+	h4 {
+		margin-bottom: 0;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.brand {
+		width: 12rem;
+	}
 }
 
 .content {
 	display: flex;
 	flex-direction: column;
-	flex-grow: 1;
 	position: relative;
+	margin: 0 1rem;
+	width: 70%;
+}
 
-	.offset {
-		height: 44px;
-	}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	font-weight: 600;
 
-	.header {
-		position: absolute;
-		top: 0;
-		left: 0;
+	.cell {
 		display: flex;
-		justify-content: space-between;
-		margin: 1rem;
-		height: 44px;
-
-		.brand {
-			margin-right: 2rem;
-			img {
-				width: 10rem;
-			}
-		}
-	}
-
-	.with-navigation {
-		min-width: 30%;
-		left: initial;
-		right: 0;
-		margin: 0;
-		height: 44px;
-		align-items: center;
-
-		button {
-			height: 100%;
-			display: flex;
-			align-items: center;
-			padding: 0 2rem;
-			background: $button;
-			color: $font-color;
-			font-size: 1.2rem;
-			margin: 0 1px;
-			border-radius: 1rem;
-			box-shadow: $shadow;
-
-			svg {
-				width: 18px;
-				margin-right: 1rem;
-				fill: $font-color;
-			}
-		}
-
-		h1 {
-			font-size: 2rem;
-			margin: 0;
-		}
-	}
-
-	.grid {
-		display: flex;
-		flex-wrap: wrap;
+		width: 25%;
+		height: 18rem;
 		padding: 1rem;
-		font-weight: 600;
 
-		.cell {
-			display: flex;
-			width: 25%;
-			height: 18rem;
-			padding: 1rem;
+		.card {
+			font-size: 1.4rem;
+			line-height: 1;
+			width: 100%;
+			height: 100%;
+			background: $button;
+			border-radius: $radius;
+			padding: 5% 15%;
+			color: $font-color;
+			white-space: normal;
+			box-shadow: $shadow;
+			justify-content: center;
+		}
 
-			.card {
-				font-size: 1.4rem;
-				line-height: 1;
-				width: 100%;
-				height: 100%;
-				background: $button;
-				border-radius: 1rem;
-				padding: 5% 15%;
-				color: rgba(255, 255, 255, 0.65);
-				white-space: normal;
-				box-shadow: $shadow;
-
-				&:active {
-					transform: scale(0.99);
-					opacity: 0.8;
-				}
-			}
-
-			.add {
-				background: #322486;
-			}
+		.add {
+			background: #d5d5d5;
 		}
 	}
 }
@@ -137,9 +131,8 @@ input[type='text'] {
 .bill {
 	background: $button;
 	width: 30%;
-	margin: 1rem;
 	padding: 1.5rem;
-	border-radius: 1.5rem;
+	border-radius: $radius;
 	box-shadow: $shadow;
 
 	h1 {
