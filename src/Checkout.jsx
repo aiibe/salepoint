@@ -4,7 +4,7 @@ export default () => {
 	return (
 		<div className='bill'>
 			<div className='header'>
-				<h1>Bill</h1>
+				<h3>Checkout</h3>
 			</div>
 		</div>
 	)

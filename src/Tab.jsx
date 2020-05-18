@@ -6,7 +6,7 @@ export default () => {
 			<div className='tab active'>Menu</div>
 			<div className='tab'>Orders</div>
 			<div className='tab'>Shop</div>
-			<div className='tab'>Analytic</div>
+			<div className='tab'>Analytics</div>
 			<div className='tab'>Settings</div>
 		</div>
 	)
