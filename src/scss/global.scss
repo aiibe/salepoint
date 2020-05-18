@@ -31,15 +31,18 @@ input[type='text'] {
 	border: 0;
 }
 
-button {
+button,
+.button {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 100%;
 	background: $button;
 	box-shadow: $shadow;
 	border-radius: $radius;
 	font-family: $fonts;
 	padding: 0 1.5rem;
+	color: inherit;
 
 	&.with-icon {
 		justify-content: space-between;
@@ -116,7 +119,6 @@ svg {
 			background: $button;
 			border-radius: $radius;
 			padding: 5% 15%;
-			color: $font-color;
 			white-space: normal;
 			box-shadow: $shadow;
 			justify-content: center;
@@ -128,6 +130,10 @@ svg {
 	}
 }
 
+.panel {
+	flex-grow: 1;
+}
+
 .bill {
 	background: $button;
 	width: 30%;
@@ -137,6 +143,34 @@ svg {
 
 	h1 {
 		font-size: 2.8rem;
+	}
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 54px;
+	background: $button;
+	box-shadow: $shadow;
+	border-radius: $radius;
+	overflow: hidden;
+
+	.tab {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 2rem;
+		background: $button;
+		cursor: pointer;
+		font-family: $fonts;
+		font-weight: 600;
+		font-size: 1.2rem;
+
+		&.active {
+			background: #0962d5bf;
+			color: white;
+		}
 	}
 }
 
@@ -156,7 +190,7 @@ svg {
 		z-index: 150;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.2);
 	}
 
 	.modal-body {
@@ -165,8 +199,9 @@ svg {
 		margin: 4rem auto;
 		max-width: 70%;
 		background: $button;
-		border-radius: 1rem;
+		border-radius: $radius;
 		overflow: hidden;
+		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
 	}
 }
 
@@ -188,8 +223,13 @@ svg {
 			width: 50%;
 			border-radius: 0;
 			color: white;
-			background: rgba(0, 0, 0, 0.2);
+			background: rgba(0, 0, 0, 0.5);
 			margin: 0 1px;
 		}
 	}
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import Navigato from './Navigato'
-import Bill from './Bill'
+import Checkout from './Checkout'
 import HomePanel from './HomePanel'
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ProductPanel from './ProductPanel'
+import Tab from './Tab'
 
 export default () => {
 	console.log('Render App')
@@ -21,10 +22,11 @@ export default () => {
 							<HomePanel />
 						</Route>
 					</Switch>
-					<div className='footer'></div>
+					<div className='footer'>
+						<Tab />
+					</div>
 				</div>
-
-				<Bill />
+				<Checkout />
 			</div>
 		</BrowserRouter>
 	)
