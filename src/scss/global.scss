@@ -7,6 +7,7 @@ $background: #e1e1e1;
 $button: linear-gradient(180deg, #fff 0%, #ececec 100%);
 $shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
 $radius: 0.5rem;
+$bleu-ciel: linear-gradient(to bottom, #3389f7 0%, #297deb 100%);
 
 @import './base.scss';
 
@@ -135,7 +136,9 @@ svg {
 	flex-grow: 1;
 }
 
-.bill {
+.checkout {
+	display: flex;
+	flex-direction: column;
 	background: $button;
 	width: 30%;
 	padding: 1.5rem;
@@ -146,6 +149,63 @@ svg {
 		font-weight: 600;
 		font-size: 2rem;
 		text-transform: uppercase;
+	}
+
+	.body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		.items {
+			flex-grow: 1;
+
+			.item {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				font-weight: 600;
+				align-items: flex-start;
+				line-height: 1;
+				margin: 2rem 0;
+
+				.quantity {
+					min-width: 10%;
+					text-align: center;
+					background: $bleu-ciel;
+					color: white;
+					padding: 0.5rem;
+					border-radius: 50%;
+				}
+
+				.detail {
+					flex-grow: 1;
+					margin: 0 1rem;
+				}
+
+				.price {
+					text-align: end;
+				}
+
+				small {
+					font-weight: normal;
+				}
+			}
+		}
+	}
+
+	.total {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 600;
+	}
+
+	.footer {
+		.pay {
+			width: 100%;
+			color: white;
+			background: $bleu-ciel;
+		}
 	}
 }
 
@@ -171,7 +231,7 @@ svg {
 		font-size: 1.2rem;
 
 		&.active {
-			background: #0962d5bf;
+			background: $bleu-ciel;
 			color: white;
 		}
 	}
@@ -193,7 +253,6 @@ svg {
 		z-index: 150;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.2);
 	}
 
 	.modal-body {
@@ -226,7 +285,7 @@ svg {
 			width: 50%;
 			border-radius: 0;
 			color: white;
-			background: rgba(0, 0, 0, 0.5);
+			background: rgb(51, 137, 247);
 			margin: 0 1px;
 		}
 	}

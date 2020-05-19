@@ -48,7 +48,7 @@ export default ({ grid = 10 }) => {
 				</div>
 				{renderItems()}
 				<div className='cell'>
-					<button className='card add'>More</button>
+					<button className='card add'>Next</button>
 				</div>
 			</div>
 		</Panel>
