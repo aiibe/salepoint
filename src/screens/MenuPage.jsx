@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import Button from '../elements/Button'
 import Panel from '../elements/Panel'
 import Modal from '../elements/Modal'
+import ButtonIcon from '../elements/ButtonIcon'
 
 const _collections = [
 	{ name: 'Pizza', path: '/pizza' },
@@ -85,18 +86,24 @@ export default () => {
 			return (
 				<div className='item nextback'>
 					{currentPage !== 0 && (
-						<Button
+						<ButtonIcon
 							onClick={() => setCurrentPage((current) => current - 1)}
 							disabled={currentPage == 0}
 						>
+							<svg viewBox='0 0 0.558 1.217'>
+								<path d='M.5.11a.052.052 0 00-.04.016L.017.568a.06.06 0 000 .082l.442.442c.015.015.036.02.056.015s.036-.02.04-.04.001-.043-.015-.057l-.4-.4.4-.4C.558.19.563.166.553.144S.522.108.5.11z' />
+							</svg>
 							Back
-						</Button>
+						</ButtonIcon>
 					)}
 
 					{currentPage + 1 !== collections.length && (
-						<Button onClick={() => setCurrentPage((current) => current + 1)}>
+						<ButtonIcon onClick={() => setCurrentPage((current) => current + 1)}>
 							Next
-						</Button>
+							<svg viewBox='0 0 0.558 1.217'>
+								<path d='M.06.11C.075.11.09.115.1.126l.44.442a.056.056 0 010 .082l-.44.442c-.015.015-.036.02-.056.015s-.036-.02-.04-.04.001-.042.016-.056l.4-.4-.4-.4C.001.19-.004.166.005.144S.036.108.06.11z' />
+							</svg>
+						</ButtonIcon>
 					)}
 				</div>
 			)
