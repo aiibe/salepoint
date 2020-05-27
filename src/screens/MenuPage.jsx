@@ -10,28 +10,36 @@ const _collections = [
 	{ name: 'Soups', path: '/soup' },
 	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Coffee', path: '/bakery' },
-	{ name: 'Donuts', path: '/bakery' },
+	{ name: 'Pizza', path: '/pizza' },
 	{ name: 'Burgers', path: '/burgers' },
 	{ name: 'Soups', path: '/soup' },
 	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
+	{ name: 'Pizza', path: '/pizza' },
+	{ name: 'Burgers', path: '/burgers' },
+	{ name: 'Soups', path: '/soup' },
+	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
+	{ name: 'Pizza', path: '/pizza' },
+	{ name: 'Burgers', path: '/burgers' },
+	{ name: 'Soups', path: '/soup' },
+	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
+	{ name: 'Pizza', path: '/pizza' },
+	{ name: 'Burgers', path: '/burgers' },
+	{ name: 'Soups', path: '/soup' },
+	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
+	{ name: 'Pizza', path: '/pizza' },
+	{ name: 'Burgers', path: '/burgers' },
+	{ name: 'Soups', path: '/soup' },
+	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
+	{ name: 'Pizza', path: '/pizza' },
+	{ name: 'Burgers', path: '/burgers' },
+	{ name: 'Soups', path: '/soup' },
+	{ name: 'Beers', path: '/beers' },
 	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Bakery', path: '/bakery' },
-	{ name: 'Coffee', path: '/bakery' },
-	{ name: 'Donuts', path: '/bakery' },
 ]
 
 function paginate(items) {
@@ -99,15 +107,17 @@ export default () => {
 	return (
 		<Panel>
 			<div className='nav'>
-				<div className='item current'>
+				<div className='item'>
 					<h4>Menu</h4>
 				</div>
-				<div className='item'>
+				<div className='item tools'>
 					<Button onClick={() => setModal(true)}>Add collection</Button>
+					{renderNavigation()}
 				</div>
-				{renderNavigation()}
 			</div>
-			<div className='grid'>{renderCollections()}</div>
+			<div className='inner'>
+				<div className='grid'>{renderCollections()}</div>
+			</div>
 			{modal && (
 				<Modal close={() => setModal(false)}>
 					<div className='form'>
