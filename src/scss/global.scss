@@ -32,6 +32,10 @@ input[type='text'] {
 	border: 0;
 }
 
+button:disabled {
+	// opacity: 0.3;
+}
+
 button,
 .button {
 	display: flex;
@@ -44,6 +48,7 @@ button,
 	font-family: $fonts;
 	padding: 0 1.5rem;
 	color: inherit;
+	min-width: 8rem;
 
 	&.with-icon {
 		justify-content: space-between;
@@ -80,6 +85,16 @@ svg {
 		display: flex;
 		align-items: center;
 		height: inherit;
+	}
+
+	.nextback {
+		display: flex;
+		justify-content: flex-end;
+		min-width: 180px;
+
+		button {
+			margin-left: 1rem;
+		}
 	}
 
 	h4 {
@@ -167,7 +182,7 @@ svg {
 				font-weight: 600;
 				align-items: flex-start;
 				line-height: 1;
-				margin: 2rem 0;
+				margin: 2.5rem 0;
 
 				.quantity {
 					min-width: 10%;

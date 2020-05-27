@@ -21,23 +21,29 @@ const items = [
 ]
 
 export default ({ grid = 10 }) => {
-	let [next, setNext] = useState(items.length % grid)
-	let location = useLocation()
-	let { name } = location.state
+	let [anchor, setAnchor] = useState(0)
 
 	function renderItems() {
-		let count
-		let childs = []
-
-		for (count = 0; count < grid; count++) {
-			childs.push(
+		let children = []
+		for (let count = anchor; count < items.length; ++count) {
+			if (count == grid) break
+			children.push(
 				<div className='cell' key={`a1-${count}`}>
 					<Button item={items[count]}>{items[count].name}</Button>
 				</div>
 			)
 		}
+		return children
+	}
 
-		return childs
+	function renderNextButton() {
+		return (
+			items.length >= grid && (
+				<div className='cell'>
+					<button className='card add'>Next</button>
+				</div>
+			)
+		)
 	}
 
 	return (
@@ -47,9 +53,7 @@ export default ({ grid = 10 }) => {
 					<button className='card add'>+ New item</button>
 				</div>
 				{renderItems()}
-				<div className='cell'>
-					<button className='card add'>Next</button>
-				</div>
+				{renderNextButton()}
 			</div>
 		</Panel>
 	)

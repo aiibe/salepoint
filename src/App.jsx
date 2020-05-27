@@ -1,7 +1,6 @@
 import React from 'react'
-import Navigato from './Navigato'
 import Checkout from './Checkout'
-import HomePanel from './HomePanel'
+import MenuPage from './screens/MenuPage'
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ProductPanel from './ProductPanel'
@@ -13,13 +12,12 @@ export default () => {
 		<BrowserRouter>
 			<div className='app'>
 				<div className='content'>
-					<Navigato />
 					<Switch>
 						<Route path='/:id'>
 							<ProductPanel />
 						</Route>
 						<Route path='/'>
-							<HomePanel />
+							<MenuPage />
 						</Route>
 					</Switch>
 					<div className='footer'>
