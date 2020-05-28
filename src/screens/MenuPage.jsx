@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import Button from '../elements/Button'
 import Panel from '../elements/Panel'
 import Modal from '../elements/Modal'
 import ButtonIcon from '../elements/ButtonIcon'
@@ -74,7 +73,9 @@ export default () => {
 			return collections[currentPage].map((i, id) => {
 				return (
 					<div className='cell' key={id}>
-						<Button onClick={() => history.push(i.path)}>{i.name}</Button>
+						<button className='card' onClick={() => history.push(i.path)}>
+							{i.name}
+						</button>
 					</div>
 				)
 			})
@@ -118,7 +119,9 @@ export default () => {
 					<h4>Menu</h4>
 				</div>
 				<div className='item tools'>
-					<Button onClick={() => setModal(true)}>Add collection</Button>
+					<button className='card' onClick={() => setModal(true)}>
+						Create collection
+					</button>
 					{renderNavigation()}
 				</div>
 			</div>
@@ -129,12 +132,12 @@ export default () => {
 				<Modal close={() => setModal(false)}>
 					<div className='form'>
 						<div className='body'>
-							<label>New collection</label>
+							<label>Name collection</label>
 							<input type='text' placeholder='Name' autoFocus />
 						</div>
 						<div className='footer'>
-							<Button>Cancel</Button>
-							<Button>Okay</Button>
+							<button className='card'>Cancel</button>
+							<button className='card'>Okay</button>
 						</div>
 					</div>
 				</Modal>

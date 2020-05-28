@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Panel from './elements/Panel'
-import Button from './elements/Button'
 
 const items = [
 	{ name: 'Royal Cheese', path: '/royal-cheese' },
@@ -29,7 +28,9 @@ export default ({ grid = 10 }) => {
 			if (count == grid) break
 			children.push(
 				<div className='cell' key={`a1-${count}`}>
-					<Button item={items[count]}>{items[count].name}</Button>
+					<button className='card' item={items[count]}>
+						{items[count].name}
+					</button>
 				</div>
 			)
 		}
